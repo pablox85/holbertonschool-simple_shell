@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
-
+hsh
+*.swp
 # Object files
 *.o
 *.ko
