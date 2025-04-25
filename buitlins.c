@@ -4,11 +4,11 @@
  * handle_exit - Handles the exit command for the shell
  *
  * Description: Frees allocated memory and exits the shell
- * Return: None (exits process) se cambio el codigo exit de 0 a 2
+ * Return: None (exits process)
  */
-void handle_exit(int status)
+void handle_exit(void)
 {
-	exit(status);
+	exit(0);
 }
 /**
  * handle_env - Prints all environment variables

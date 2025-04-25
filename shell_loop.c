@@ -24,16 +24,13 @@ void run_shell_loop(void)
 		read = getline(&input, &len, stdin);
 		if (read == -1)
 		{
-			if (is_interactive)
+			if (is_interactive) 
 				printf("\n");
-			free(input);
 			break;
 		}
 
 		args = tokenize_input(input);
-		if (!args)
-			continue;
-		if (!args[0])
+		if (!args || !args[0])
 		{
 			free(args);
 			continue;
@@ -52,4 +49,3 @@ void run_shell_loop(void)
 
 	free(input);
 }
-
