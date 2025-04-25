@@ -37,8 +37,12 @@ char *find_command_in_path(char *command)
 	char *path_copy, *token, *full_path;
 	size_t command_len, dir_len;
 
+	if (!path || path[0] == '\0')
+		return(NULL);
+
 	if (!path || !command)
 		return (NULL);
+
 	path_copy = strdup(path);
 	if (!path_copy)
 		return (NULL);

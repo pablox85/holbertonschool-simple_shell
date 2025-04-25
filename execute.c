@@ -33,8 +33,19 @@ int execute_external_command(char **args)
 
 	if (access(command_path, X_OK) != 0)
 	{
+		command_path = args[0];
+	}
+	else
+	{
 		command_path = find_command_in_path(args[0]);
 	}
+
+	if (!command_path)
+	{
+		print_command_error(args[0]);
+		return (127);
+	}
+
 
 	pid = fork();
 	if (pid == 0)
