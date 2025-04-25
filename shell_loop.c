@@ -6,6 +6,7 @@
  * Description: Continuously reads input from the user, processes it,
  * and executes the appropriate commands until exit
  * Return: None
+ * se cambia exit(last_status); a exit(2);
  */
 void run_shell_loop(void)
 {
@@ -14,7 +15,7 @@ void run_shell_loop(void)
 	ssize_t read;
 	char **args;
 	int is_interactive = isatty(STDIN_FILENO);
-	int last_status = 0;
+/*	int last_status = 0; */
 
 	while (1)
 	{
@@ -40,10 +41,10 @@ void run_shell_loop(void)
 		{
 			free(args);
 			free(input);
-			exit(last_status);
+			exit(2);
 		}
 
-		last_status = execute_command(args);
+		/*last_status =*/ execute_command(args);
 		free(args);
 	}
 
