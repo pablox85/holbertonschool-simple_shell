@@ -8,7 +8,7 @@
  */
 void handle_exit(void)
 {
-	exit(2);
+	exit(0);
 }
 /**
  * handle_env - Prints all environment variables

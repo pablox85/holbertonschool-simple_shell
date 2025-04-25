@@ -41,7 +41,7 @@ void run_shell_loop(void)
 		{
 			free(args);
 			free(input);
-			exit(2);
+			exit(0);
 		}
 
 		/*last_status =*/ execute_command(args);
